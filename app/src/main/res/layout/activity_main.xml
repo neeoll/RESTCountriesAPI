@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Where in the world?"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/fragment_ceiling"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_outline_brightness_2_24"
+            android:layout_margin="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/night_toggle"
+            app:layout_constraintEnd_toStartOf="@id/night_toggle"
+            app:layout_constraintTop_toTopOf="@id/night_toggle" />
+
+        <TextView
+            android:id="@+id/night_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Night Mode"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/fragment_ceiling"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_ceiling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_ceiling"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
